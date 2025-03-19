@@ -199,3 +199,78 @@ body {
     }
 }
 
+
+
+#balloons-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 5s linear infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120vh);
+      opacity: 0;
+    }
+  }
+  
+
+  #balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation: floatUp linear infinite;
+}
+
+/* Adding the Balloon String */
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: black;
+    transform: translateX(-50%);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
